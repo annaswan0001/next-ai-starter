@@ -247,7 +247,7 @@
     "security-guidance@anthropic-plugin-directory": true,
     "typescript-lsp@claude-plugins-official": true,
     "vercel@anthropic-plugin-directory": true,
-    "frontend-design@anthropic-plugin-directory": true,
+    "frontend-design@anthropic-plugin-directory": true
   },
   "env": { "VERCEL_PLUGIN_TELEMETRY": "off" }
 }
