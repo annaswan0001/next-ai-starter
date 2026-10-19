@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm lint)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm typecheck)",
+      "Bash(pnpm test)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm build)",
+      "Bash(pnpm exec prettier *)",
+      "Bash(pnpm exec eslint *)",
+      "Bash(git status)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git branch)",
+      "Bash(git show *)",
+      "WebFetch(domain:nextjs.org)",
+      "WebFetch(domain:react.dev)",
+      "WebFetch(domain:tailwindcss.com)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "WebFetch(domain:next-intl.dev)",
+      "WebFetch(domain:tanstack.com)",
+      "WebFetch(domain:nuqs.dev)",
+      "WebFetch(domain:zod.dev)"
+    ],
+    "ask": [
+      "Edit(./*.config.*)",
+      "Edit(./.prettierrc*)",
+      "Edit(./tsconfig*.json)",
+      "Edit(./CLAUDE.md)",
+      "Edit(./AGENTS.md)",
+      "Edit(./.claude/**)",
+      "Edit(./.github/**)",
+      "Edit(./.vscode/**)",
+      "Edit(./.husky/**)",
+      "Edit(./package.json)"
+    ],
+    "deny": [
+      "Bash(pnpm add *)",
+      "Bash(pnpm remove *)",
+      "Bash(pnpm rm *)",
+      "Bash(pnpm uninstall *)",
+      "Bash(pnpm un *)",
+      "Bash(pnpm dlx *)",
+      "Bash(pnpm create *)",
+      "Bash(pnpm install)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm i)",
+      "Bash(pnpm i *)",
+      "Bash(pnpm update)",
+      "Bash(pnpm update *)",
+      "Bash(pnpm up)",
+      "Bash(pnpm up *)",
+      "Bash(pnpm upgrade)",
+      "Bash(pnpm upgrade *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(yarn *)",
+      "Bash(pnpm publish *)",
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+      "Bash(rm -r *)",
+      "Bash(rm -R *)",
+      "Bash(git clean *)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore *)",
+      "Bash(git commit)",
+      "Bash(git commit *)",
+      "Bash(git update-ref *)",
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(git reset *)",
+      "Bash(git rebase *)",
+      "Bash(git -c *)",
+      "Read(./**/.env)",
+      "Read(./**/.env.local)",
+      "Read(./**/.env.*.local)",
+      "Read(./**/.env.development)",
+      "Read(./**/.env.production)",
+      "Read(./**/.env.test)",
+      "Read(./**/.env.staging)",
+      "Read(./**/.env.preview)",
+      "Read(./**/.envrc)",
+      "Read(./**/.dev.vars)",
+      "Read(./**/.npmrc)",
+      "Read(./**/secrets/**)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(./**/*.p12)",
+      "Read(./**/*.pfx)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.docker/**)",
+      "Read(~/.npmrc)",
+      "Read(~/.netrc)",
+      "Read(~/.git-credentials)",
+      "Read(~/.config/gh/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.vercel/**)",
+      "Read(~/Library/Keychains/**)",
+      "Read(~/Library/Cookies/**)",
+      "Read(~/Library/Application Support/com.vercel.cli/**)",
+      "Read(~/.zsh_history)",
+      "Read(~/.bash_history)",
+      "Edit(./pnpm-lock.yaml)",
+      "Edit(./node_modules/**)",
+      "Edit(./pnpm-workspace.yaml)",
+      "Edit(./.npmrc)",
+      "Edit(./.claude/settings.json)",
+      "Edit(./.claude/settings.local.json)",
+      "Edit(./.claude/hooks/**)",
+      "Edit(./.envrc)",
+      "mcp__plugin_playwright_playwright__browser_run_code_unsafe",
+      "mcp__plugin_playwright_playwright__browser_file_upload"
+    ],
+    "disableBypassPermissionsMode": "disable"
+  },
+  "sandbox": {
+    "enabled": true,
+    "allowUnsandboxedCommands": false,
+    "autoAllowBashIfSandboxed": true,
+    "failIfUnavailable": true,
+    "filesystem": {
+      "denyWrite": [
+        "./package.json",
+        "./pnpm-workspace.yaml",
+        "./*.config.*",
+        "./.prettierrc*",
+        "./tsconfig*.json",
+        "./next.config.ts",
+        "./next.config.mjs",
+        "./eslint.config.mjs",
+        "./postcss.config.mjs",
+        "./tailwind.config.ts",
+        "./vitest.config.ts",
+        "./playwright.config.ts",
+        "./prettier.config.mjs",
+        "./.prettierrc",
+        "./.prettierrc.json",
+        "./tsconfig.json",
+        "./components.json",
+        "./node_modules",
+        "./.npmrc",
+        "./.pnpmfile.cjs",
+        "./.pnpmfile.mjs",
+        "./.git",
+        "./CLAUDE.md",
+        "./AGENTS.md",
+        "./.claude",
+        "./.github",
+        "./.vscode",
+        "./.husky",
+        "./.envrc"
+      ],
+
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/.docker",
+        "~/.npmrc",
+        "~/.netrc",
+        "~/.git-credentials",
+        "~/.config/gh",
+        "~/.gnupg",
+        "~/.kube",
+        "~/.vercel",
+        "~/Library/Keychains",
+        "~/Library/Cookies",
+        "./.env",
+        "./.env.local",
+        "~/.claude",
+        "~/Library/Application Support"
+      ]
+    },
+    "network": {
+      "allowLocalBinding": true,
+      "allowedDomains": ["fonts.googleapis.com", "fonts.gstatic.com"]
+    },
+    "credentials": {
+      "envVars": [
+        {
+          "name": "VERCEL_TOKEN",
+          "mode": "deny"
+        },
+        {
+          "name": "GITHUB_TOKEN",
+          "mode": "deny"
+        },
+        {
+          "name": "GH_TOKEN",
+          "mode": "deny"
+        },
+        {
+          "name": "NPM_TOKEN",
+          "mode": "deny"
+        },
+        {
+          "name": "NODE_AUTH_TOKEN",
+          "mode": "deny"
+        }
+      ]
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block-push.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format.sh",
+            "timeout": 60,
+            "statusMessage": "Formatting & linting"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/stop-check.sh",
+            "timeout": 180,
+            "statusMessage": "Type-checking"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "playwright@anthropic-plugin-directory": true,
+    "security-guidance@anthropic-plugin-directory": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "vercel@anthropic-plugin-directory": true,
+    "frontend-design@anthropic-plugin-directory": true,
+  },
+  "env": { "VERCEL_PLUGIN_TELEMETRY": "off" }
+}
