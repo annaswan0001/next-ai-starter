@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hooks:
+    name: Hook tests (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        # The sandbox and the hooks behave differently on macOS and Linux.
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: lts/*
+          package-manager-cache: false
+      - name: Check hook scripts are executable
+        run: |
+          status=0
+          for f in .claude/hooks/*.sh; do
+            [ -x "$f" ] || { echo "::error file=$f::not executable (chmod +x)"; status=1; }
+          done
+          exit $status
+      - name: Run hook tests
+        run: node --test "tests/hooks/*.test.mjs"
